@@ -27,10 +27,10 @@ const HomePage: React.FC = () => {
                 {data?.data?.map((country: Country, idx: number) => (
                     <div className="w-full items-center justify-center flex px-3 py-3" key={idx}>
                         <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                            <img className="w-full h-40" src={country.flags.png} alt="Sunset in the mountains" />
+                            <img className="aspect-video" src={country.flags.png} alt="Sunset in the mountains"  />
                             <div className="px-6 py-4">
-                                <div className="font-bold text-xl mb-2">{country.name.common}</div>
-                                <p className="text-gray-700 text-base">
+                                <div className="font-bold text-base md:text-lg lg:text-xl mb-2">{country.name.common}</div>
+                                <p className="text-gray-700 text-sm md:text-base">
                                     {country.capital}
                                 </p>
                             </div>
@@ -43,7 +43,7 @@ const HomePage: React.FC = () => {
                 <button
                     onClick={() => setPage(p => Math.max(p - 1, 1))}
                     disabled={page === 1}
-                    className="px-4 py-2 bg-blue-500 text-white rounded disabled:opacity-50"
+                    className="px-4 bg-blue-500 text-white rounded disabled:opacity-50"
                 >
                     Previous
                 </button>
@@ -51,7 +51,7 @@ const HomePage: React.FC = () => {
                 <button
                     onClick={() => setPage(p => Math.min(p + 1, data.totalPages))}
                     disabled={page === data.totalPages}
-                    className="px-4 py-2 bg-blue-500 text-white rounded disabled:opacity-50"
+                    className="px-4 bg-blue-500 text-white rounded disabled:opacity-50"
                 >
                     Next
                 </button>
