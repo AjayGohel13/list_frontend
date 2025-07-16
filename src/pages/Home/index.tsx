@@ -23,9 +23,9 @@ const HomePage: React.FC = () => {
         <div className="p-6">
             <Header/>
             <h1 className="text-2xl font-bold mb-4">🌍 Countries (Page {data.page})</h1>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {data?.data?.map((country: Country, idx: number) => (
-                    <div className="flex px-3 py-3" key={idx}>
+                    <div className="w-full items-center justify-center flex px-3 py-3" key={idx}>
                         <div className="max-w-sm rounded overflow-hidden shadow-lg">
                             <img className="w-full h-40" src={country.flags.png} alt="Sunset in the mountains" />
                             <div className="px-6 py-4">
